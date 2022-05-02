@@ -3,11 +3,11 @@ version: 5.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/avatar.jpg
+# logo: https://s4.ax1x.com/2022/02/06/HuEwX4.jpg
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/avatar.jpg
+    favicon: https://s4.ax1x.com/2022/02/06/HuEwX4.jpg
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -138,7 +138,7 @@ article:
         # Show copy code button
         clipboard: true
         # Default folding status of the code blocks. Can be "", "folded", "unfolded"
-        fold: unfolded
+        fold: folded
     # Whether to show estimated article reading time
     readtime: true
     # Whether to show updated time. For "auto", shows article update time only when page.updated is set and it is different from page.date
@@ -231,7 +231,7 @@ widgets:
         # Author's current location
         location: Bei Jing
         # URL or path to the avatar image
-        avatar: /img/avatar.jpg
+        avatar: https://s4.ax1x.com/2022/02/06/HuEwX4.jpg
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -242,7 +242,7 @@ widgets:
         social_links:
             Github:
                 icon: fab fa-github
-                url: https://github.com/ppoffice
+                url: https://github.com/EnterIen
             Facebook:
                 icon: fab fa-facebook
                 url: https://facebook.com
@@ -258,10 +258,10 @@ widgets:
     # Table of contents widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: toc
         # Whether to show the index of each heading
-        index: true
+        index: false
         # Whether to collapse sub-headings when they are out-of-view
         collapsed: true
         # Maximum level of headings to show (1-6)
