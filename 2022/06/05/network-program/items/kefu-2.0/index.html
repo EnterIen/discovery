@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>客服系统 2.0 - Discover What You Want - Frank Wang</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Discover What You Want - Frank Wang"><meta name="msapplication-TileImage" content="https://s4.ax1x.com/2022/02/06/HuEwX4.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Discover What You Want - Frank Wang"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="客服系统 2.01 前言   此文借以北京住范儿客服系统为原型撰写    强烈建议入门选手先看看这一篇写给产品经理的《零基础IM开发入门》 ​     客服系统 2.0 是什么？​        支持小程序网页、Web 网页实时通信的管理系统，部分效果如下(插图)： ​      技术堆栈​      PHP   Laravel   Workerman(GatewayWorker)  Redis"><meta property="og:type" content="blog"><meta property="og:title" content="客服系统 2.0"><meta property="og:url" content="http://example.com/2022/06/05/network-program/items/kefu-2.0/"><meta property="og:site_name" content="Discover What You Want - Frank Wang"><meta property="og:description" content="客服系统 2.01 前言   此文借以北京住范儿客服系统为原型撰写    强烈建议入门选手先看看这一篇写给产品经理的《零基础IM开发入门》 ​     客服系统 2.0 是什么？​        支持小程序网页、Web 网页实时通信的管理系统，部分效果如下(插图)： ​      技术堆栈​      PHP   Laravel   Workerman(GatewayWorker)  Redis"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/35d602ad17671f72.jpeg"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/4c88dfb4f0bf99c0.png"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/5eb3f4be91a7f786.png"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/1e60a30d5d8da6eb.png"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/60077feb43a87d53.png"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/3385fad57941d725.png"><meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/05/f16815abba79143c.png"><meta property="article:published_time" content="2022-06-05T08:00:49.114Z"><meta property="article:modified_time" content="2022-06-05T08:00:49.114Z"><meta property="article:author" content="Frank Wang"><meta property="article:tag" content="网络编程"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://s3.bmp.ovh/imgs/2022/06/05/35d602ad17671f72.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/06/05/network-program/items/kefu-2.0/"},"headline":"客服系统 2.0","image":["https://s3.bmp.ovh/imgs/2022/06/05/4c88dfb4f0bf99c0.png","https://s3.bmp.ovh/imgs/2022/06/05/5eb3f4be91a7f786.png","https://s3.bmp.ovh/imgs/2022/06/05/1e60a30d5d8da6eb.png","https://s3.bmp.ovh/imgs/2022/06/05/60077feb43a87d53.png","https://s3.bmp.ovh/imgs/2022/06/05/3385fad57941d725.png","https://s3.bmp.ovh/imgs/2022/06/05/f16815abba79143c.png"],"datePublished":"2022-06-05T08:00:49.114Z","dateModified":"2022-06-05T08:00:49.114Z","author":{"@type":"Person","name":"Frank Wang"},"publisher":{"@type":"Organization","name":"Discover What You Want - Frank Wang","logo":{"@type":"ImageObject"}},"description":"客服系统 2.01 前言   此文借以北京住范儿客服系统为原型撰写    强烈建议入门选手先看看这一篇写给产品经理的《零基础IM开发入门》 ​     客服系统 2.0 是什么？​        支持小程序网页、Web 网页实时通信的管理系统，部分效果如下(插图)： ​      技术堆栈​      PHP   Laravel   Workerman(GatewayWorker)  Redis"}</script><link rel="canonical" href="http://example.com/2022/06/05/network-program/items/kefu-2.0/"><link rel="icon" href="https://s4.ax1x.com/2022/02/06/HuEwX4.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start -->
+        <script>
+            function switchTab(element) {
+                const id = element.parentElement.id;
+                const tabElements = element.parentElement.parentElement.children;
+                const contentElements = element.parentElement.parentElement.parentElement.parentElement.children[1].children;
+                for (let i = 0; i < tabElements.length; i++) {
+                    const $tab = tabElements[i];
+                    const $content = contentElements[i];
+                    if ($tab.id === id) {
+                        $tab.classList.add('is-active');
+                    } else {
+                        $tab.classList.remove('is-active');
+                    }
+                    if ($content.id === id) {
+                        $content.classList.remove('is-hidden');
+                    } else {
+                        $content.classList.add('is-hidden');
+                    }
+                }
+            }
+        </script>
+        <!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Discover What You Want - Frank Wang</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-06-05T08:00:49.114Z" title="2022-6-5 4:00:49 ├F10: PM┤">2022-06-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-06-05T08:00:49.114Z" title="2022-6-5 4:00:49 ├F10: PM┤">2022-06-05</time></span><span class="level-item"><a class="link-muted" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a><span> / </span><a class="link-muted" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">项目实践</a><span> / </span><a class="link-muted" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-2-0/">客服系统 2.0</a></span><span class="level-item">10 minutes read (About 1425 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">客服系统 2.0</h1><div class="content"><h1 id="客服系统-2-0"><a href="#客服系统-2-0" class="headerlink" title="客服系统 2.0"></a>客服系统 2.0</h1><p>1</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>   此文借以北京住范儿客服系统为原型撰写</p>
+<p>   强烈建议入门选手先看看这一篇写给产品经理的<a target="_blank" rel="noopener" href="http://www.52im.net/thread-3065-1-1.html">《零基础IM开发入门》</a></p>
+<p>​    </p>
+<h2 id="客服系统-2-0-是什么？"><a href="#客服系统-2-0-是什么？" class="headerlink" title="客服系统 2.0 是什么？"></a>客服系统 2.0 是什么？</h2><p>​    </p>
+<p>   支持小程序网页、Web 网页实时通信的管理系统，部分效果如下(插图)：</p>
+<p>​    <img src="https://s3.bmp.ovh/imgs/2022/06/05/35d602ad17671f72.jpeg" alt="C端"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/06/05/4c88dfb4f0bf99c0.png" alt="B端"></p>
+<h2 id="技术堆栈"><a href="#技术堆栈" class="headerlink" title="技术堆栈"></a>技术堆栈</h2><p>​    </p>
+<ul>
+<li><p>PHP </p>
+</li>
+<li><p>Laravel </p>
+</li>
+<li><p>Workerman(GatewayWorker)</p>
+</li>
+<li><p>Redis</p>
+</li>
+<li><p>Mysql</p>
+</li>
+</ul>
+<p>​    </p>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="https://s3.bmp.ovh/imgs/2022/06/05/5eb3f4be91a7f786.png"></p>
+<h2 id="功能组成与实践"><a href="#功能组成与实践" class="headerlink" title="功能组成与实践"></a>功能组成与实践</h2><p> 上面简单描述了一下客服系统交互流程，下面就展开讲讲要实现的细节。</p>
+<p>​    </p>
+<h3 id="联系人列表"><a href="#联系人列表" class="headerlink" title="联系人列表"></a>联系人列表</h3><p><img src="https://s3.bmp.ovh/imgs/2022/06/05/1e60a30d5d8da6eb.png"></p>
+<p>  这里的联系人列表是指某一时间段下客服接待的用户列表，实质上就是绑定客服这个 Socket Client 的所有用户 Client。需要注意的是这个列表不会分页，因为方便搜索定位。</p>
+<p>​    </p>
+<h3 id="聊天界面"><a href="#聊天界面" class="headerlink" title="聊天界面"></a>聊天界面</h3><p><img src="https://s3.bmp.ovh/imgs/2022/06/05/60077feb43a87d53.png"></p>
+<p>  这里主要就是发消息(Message)，包含文本、图片、商品、订单，需要划分类型，所以我们需要定义一个消息结构体。</p>
+<p>​    </p>
+<h3 id="未读消息"><a href="#未读消息" class="headerlink" title="未读消息"></a>未读消息</h3><p>​    </p>
+<p>  联系人列表上需要统计未读消息数</p>
+<p>​    </p>
+<h3 id="离线消息"><a href="#离线消息" class="headerlink" title="离线消息"></a>离线消息</h3><p>​    </p>
+<p>  当用户给客服发消息时，如果 Socket 连接可用，需要判断这个连接是否在线，如果不在线，先把消息发到离线数据库里，等对应的客服上线之后，主动向服务器拉取离线消息</p>
+<p>​    </p>
+<h2 id="如何保证客服系统的实时性、可靠性、一致性、安全性"><a href="#如何保证客服系统的实时性、可靠性、一致性、安全性" class="headerlink" title="如何保证客服系统的实时性、可靠性、一致性、安全性"></a>如何保证客服系统的实时性、可靠性、一致性、安全性</h2><p>​        </p>
+<p>   | 特征 | 前后端 |  </p>
+<p>   | — | — | — |</p>
+<p>   | 实时性 | 多进程消费 |  |</p>
+<p>   | 可靠性 | 重传-确认机制 |  |</p>
+<p>   | 安全性 | HTTPS+TOKEN |  |</p>
+<p>   | 一致性 | 消息去重、服务器时间同步、哈希进程 |  |</p>
+<p>​        </p>
+<p>​    </p>
+<h2 id="心跳保活"><a href="#心跳保活" class="headerlink" title="心跳保活"></a>心跳保活</h2><p>​        </p>
+<p>   正常的情况客户端断开连接会向服务端发送一个fin包，服务端收到fin包后得知客户端连接断开，则立刻触发onClose事件回调。</p>
+<p>​        </p>
+<p>   但是有些极端情况如客户端掉电、网络关闭、拔网线、路由故障等，这些极端情况客户端无法发送fin包给服务端，服务端便无法知道连接已经断开。如果客户端与服务端定时有心跳数据传输，则会比较及时的发现连接断开，触发onClose事件回调。</p>
+<p>​        </p>
+<h2 id="多端登陆"><a href="#多端登陆" class="headerlink" title="多端登陆"></a>多端登陆</h2><p>   <img src="https://s3.bmp.ovh/imgs/2022/06/05/3385fad57941d725.png"></p>
+<p>   简单点说就是假如一个客服用同一个账号即登陆了电脑端又登陆了手机端，那么当电脑端再给用户回消息的时候，服务器也需要给自己的手机端推送一次消息。</p>
+<p>​        </p>
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p>  <img src="https://s3.bmp.ovh/imgs/2022/06/05/f16815abba79143c.png"></p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="为什么-TCP-保证不了-IM-通信的可靠传输"><a href="#为什么-TCP-保证不了-IM-通信的可靠传输" class="headerlink" title="为什么 TCP 保证不了 IM 通信的可靠传输"></a>为什么 TCP 保证不了 IM 通信的可靠传输</h3><p>​        </p>
+<p>  举个例子,当 TCP 成功将消息报文发送到服务器之后,在消息入库之前服务器挂掉了,那么这个消息也就没有被存下来,当然这一次通信就算事不可靠的了。</p>
+<p>​        </p>
+<h3 id="消息结构体"><a href="#消息结构体" class="headerlink" title="消息结构体"></a>消息结构体</h3><p>​        </p>
+<p>  | 字段 | 说明 | 可选值 | 描述 |</p>
+<p> | — | — | — | — |</p>
+<p> | 字段 | 说明 | 可选值 | 描述 |</p>
+<p> | category | 所属分类 |  |  |</p>
+<p> |  |  | system | 系统推送的消息 |</p>
+<p> |  |  | customer | 客户发送的消息 |</p>
+<p> |  |  | manager | 客服发送的消息 |</p>
+<p> |  |  | heartbeat | 心跳检测（不需入库） |</p>
+<p> |  |  | ack | 响应消息回执（不需入库） |</p>
+<p> |  |  | receive | 确认收到响应回执（不需入库） |</p>
+<p> | action | 执行的动作 |  |  |</p>
+<p> |  |  | send | 正常发送 |</p>
+<p> |  |  | revoke | 撤回 |</p>
+<p> |  |  | delete | 删除 |</p>
+<p> |  |  | read | 已读 |</p>
+<p> |  |  | <code>auth</code> | 用户验证 |</p>
+<p> | style | 消息展示样式 |  |  |</p>
+<p> |  |  | normal | 一般的纯文本消息框 |</p>
+<p> |  |  | card | 卡片风格（场景：商品链接） |</p>
+<p> |  |  | order | 商品订单风格（场景：客户订单） |</p>
+<p> |  |  | <code>assess</code> | 客服评价的风格 |</p>
+<p> |  |  | <code>toast</code> | 灰色提示性样式（场景：客服接入时的提示） |</p>
+<p> | kind | 内容的格式 |  |  |</p>
+<p> |  |  | text | 一般的纯文本格式（包含emoji表情） |</p>
+<p> |  |  | picture | 图片格式（包含.jpg/.jpeg/.png/.gif等） |</p>
+<p> |  |  | video | 视频格式（包含.mp4/.mkv/.rmvb等） |</p>
+<p> |  |  | <code>audio</code> | 音频格式（包含.mp3/.raw等） |</p>
+<p> |  |  | <code>file</code> | 其他文件格式（包含.xml/.ppt/.docx/.dwg等） |</p>
+<p> |  |  | <code>unknown</code> | 未知的文件格式 |</p>
+<p> | id | 消息ID | -- | 每条消息都有全局唯一的ID（对应数据库的主键ID） |</p>
+<p> | task_id | 任务ID | -- | 指解决一次问题。从客户转入人工开始，会生成一个task_id，直到最后一个客服点击「结束服务」为止。在客服点击「，同一客户多次转入人工，task_id都是同一个。 |</p>
+<p> | content | 正文内容 | -- | 纯文本内容（如图片src地址、视频src地址） |</p>
+<p> | from | 主发送人 | -- | 发送方的唯一标识 |</p>
+<p> | to | 被接收人 | -- | 接收方的唯一标识 |</p>
+<p> | url | 链接 | -- | 点击消息后，跳转到目标链接 |</p>
+<p> | created_at | 发送时间 | -- | 消息的生成时间 |</p>
+<p> | is_read | 是否已读 | -- | 此消息是否已被用户看到 |</p>
+<p> | is_revoke | 是否已撤回 | -- | 此消息是否已被用户撤回 |</p>
+<p> | is_delete | 是否删除 | -- | 此消息是否已被用户删除 |</p>
+<p> | <code>quote</code> | 引用消息ID | -- | 引用指定的消息（场景：撤回消息时，这里应填写被撤回消息的消息ID） |</p>
+<p> | ext | 其他扩展字段 | -- | json结构化数据 |</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>客服系统 2.0</p><p><a href="http://example.com/2022/06/05/network-program/items/kefu-2.0/">http://example.com/2022/06/05/network-program/items/kefu-2.0/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Frank Wang</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2022-06-05</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2022-06-05</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">Like this article? Support the author with</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>Afdian.net</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>Alipay</span><span class="qrcode"><img src="/" alt="Alipay"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>Buy me a coffee</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>Wechat</span><span class="qrcode"><img src="/" alt="Wechat"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/05/02/geography/cities/beijing/"><span class="level-item">北京</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://s4.ax1x.com/2022/02/06/HuEwX4.jpg" alt="Frank Wang"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Frank Wang</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Bei Jing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">4</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/EnterIen" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/EnterIen"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/MySQL-CookBook/"><span class="level-start"><span class="level-item">MySQL CookBook</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%9C%B0%E7%90%86/"><span class="level-start"><span class="level-item">地理</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E5%9C%B0%E7%90%86/%E5%9F%8E%E5%B8%82/"><span class="level-start"><span class="level-item">城市</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E5%9C%B0%E7%90%86/%E5%9F%8E%E5%B8%82/%E5%8C%97%E4%BA%AC/"><span class="level-start"><span class="level-item">北京</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><span class="level-start"><span class="level-item">网络编程</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/"><span class="level-start"><span class="level-item">项目实践</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-2-0/"><span class="level-start"><span class="level-item">客服系统 2.0</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/%E8%81%8C%E4%B8%9A%E6%88%90%E9%95%BF/"><span class="level-start"><span class="level-item">职业成长</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-05T08:00:49.114Z">2022-06-05</time></p><p class="title"><a href="/2022/06/05/network-program/items/kefu-2.0/">客服系统 2.0</a></p><p class="categories"><a href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a> / <a href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">项目实践</a> / <a href="/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-2-0/">客服系统 2.0</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-02T14:29:49.191Z">2022-05-02</time></p><p class="title"><a href="/2022/05/02/geography/cities/beijing/">北京</a></p><p class="categories"><a href="/categories/%E5%9C%B0%E7%90%86/">地理</a> / <a href="/categories/%E5%9C%B0%E7%90%86/%E5%9F%8E%E5%B8%82/">城市</a> / <a href="/categories/%E5%9C%B0%E7%90%86/%E5%9F%8E%E5%B8%82/%E5%8C%97%E4%BA%AC/">北京</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-02T13:46:53.995Z">2022-05-02</time></p><p class="title"><a href="/2022/05/02/geography/home/">地理之家乡</a></p><p class="categories"><a href="/categories/%E5%9C%B0%E7%90%86/">地理</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-06T13:50:55.032Z">2022-02-06</time></p><p class="title"><a href="/2022/02/06/hello-world/">Hello World</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-06T12:55:44.000Z">2022-02-06</time></p><p class="title"><a href="/2022/02/06/mysql-contract/">团队 MySQL 开发规范</a></p><p class="categories"><a href="/categories/MySQL-CookBook/">MySQL CookBook</a></p></div></article></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#客服系统-2-0"><span class="level-left"><span class="level-item">客服系统 2.0</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#前言"><span class="level-left"><span class="level-item">前言</span></span></a></li><li><a class="level is-mobile" href="#客服系统-2-0-是什么？"><span class="level-left"><span class="level-item">客服系统 2.0 是什么？</span></span></a></li><li><a class="level is-mobile" href="#技术堆栈"><span class="level-left"><span class="level-item">技术堆栈</span></span></a></li><li><a class="level is-mobile" href="#流程图"><span class="level-left"><span class="level-item">流程图</span></span></a></li><li><a class="level is-mobile" href="#功能组成与实践"><span class="level-left"><span class="level-item">功能组成与实践</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#联系人列表"><span class="level-left"><span class="level-item">联系人列表</span></span></a></li><li><a class="level is-mobile" href="#聊天界面"><span class="level-left"><span class="level-item">聊天界面</span></span></a></li><li><a class="level is-mobile" href="#未读消息"><span class="level-left"><span class="level-item">未读消息</span></span></a></li><li><a class="level is-mobile" href="#离线消息"><span class="level-left"><span class="level-item">离线消息</span></span></a></li></ul></li><li><a class="level is-mobile" href="#如何保证客服系统的实时性、可靠性、一致性、安全性"><span class="level-left"><span class="level-item">如何保证客服系统的实时性、可靠性、一致性、安全性</span></span></a></li><li><a class="level is-mobile" href="#心跳保活"><span class="level-left"><span class="level-item">心跳保活</span></span></a></li><li><a class="level is-mobile" href="#多端登陆"><span class="level-left"><span class="level-item">多端登陆</span></span></a></li><li><a class="level is-mobile" href="#架构图"><span class="level-left"><span class="level-item">架构图</span></span></a></li><li><a class="level is-mobile" href="#附录"><span class="level-left"><span class="level-item">附录</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#为什么-TCP-保证不了-IM-通信的可靠传输"><span class="level-left"><span class="level-item">为什么 TCP 保证不了 IM 通信的可靠传输</span></span></a></li><li><a class="level is-mobile" href="#消息结构体"><span class="level-left"><span class="level-item">消息结构体</span></span></a></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Discover What You Want - Frank Wang</a><p class="is-size-7"><span>&copy; 2022 Frank Wang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'folded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
