@@ -142,7 +142,7 @@ article:
     # Whether to show estimated article reading time
     readtime: true
     # Whether to show updated time. For "auto", shows article update time only when page.updated is set and it is different from page.date
-    update_time: true
+    update_time: false
     # Article licensing block
     licenses:
         Creative Commons:
@@ -215,7 +215,7 @@ sidebar:
     # Right sidebar configurations
     right:
         # Whether the sidebar sticks to the top when page scrolls
-        sticky: false
+        sticky: true
 # Sidebar widget configurations
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
@@ -261,11 +261,11 @@ widgets:
         position: right
         type: toc
         # Whether to show the index of each heading
-        index: false
+        index: true
         # Whether to collapse sub-headings when they are out-of-view
-        collapsed: true
+        collapsed: false
         # Maximum level of headings to show (1-6)
-        depth: 3
+        depth: 6
     # Recommendation links widget configurations
     # -
     #     # Where should the widget be placed, left sidebar or right sidebar
