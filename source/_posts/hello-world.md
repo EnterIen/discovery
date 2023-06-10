@@ -16,6 +16,12 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 
 <!--more-->
 
+<video width="100%" height="auto" controls>
+  <source src="../../videos/1673276705287.mp4" type="video/mp4">
+</video> 
+
+<iframe width="100%" height="315" src="https://www.youtube.com/watch?v=Yuq-ZoqyFkI&t=118s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### Run server
 
